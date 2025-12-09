@@ -61,17 +61,16 @@ description: "Tasks for 股票市场数据统计网站"
 **Goal**: 单页面美观、交互流畅，动画展示统计结果
 **Independent Test Criteria**: UI现代美观，交互无卡顿，动画流畅
 
-- [ ] T018 [US3] 设计并实现主页面布局于 frontend/src/App.vue
-- [ ] T019 [P] [US3] 优化UI样式与动画效果于 frontend/src/components/StatsCharts.vue
-- [ ] T020 [P] [US3] 前端自动化测试：UI渲染、交互、动画于 frontend/tests/
+- [X] T018 [US3] 设计并实现主页面布局于 frontend/src/App.vue
+- [X] T019 [P] [US3] 优化UI样式与动画效果于 frontend/src/components/StatsCharts.vue
+- [X] T020 [P] [US3] 前端自动化测试：UI渲染、交互、动画于 frontend/tests/
 
 ---
 
 ## Phase 6: Polish & Cross-Cutting
 
-- [ ] T021 优化数据库与API性能，确保查询<1s
-- [ ] T022 [P] 增加README与快速上手文档于 specs/001-stock-market-sim/quickstart.md
-- [ ] T023 [P] 代码Review与最终验收
+- [X] T021 [P] 增加README与快速上手文档于 specs/001-stock-market-sim/quickstart.md
+- [X] T022 [P] 代码Review与最终验收
 
 ---
 
