@@ -69,70 +69,33 @@
 - 100%功能点有自动化测试覆盖。
 - 用户反馈满意度高于80%（如有收集）。
 
+
 ## Key Entities
 
-- 用户（user_id, ...）
+- 用户（user_id）
 - 股票（stock_id, 名称）
-- 买卖记录（user_id, stock_id, 时间, 买入/卖出, 数量, 价格）
+- 买卖记录（user_id, stock_id, 时间, 类型[买/卖], 数量, 价格）
 - 股票价格（stock_id, 时间, 价格）
 
 ## Assumptions
 
-- 所有数据均为本地模拟，无需真实外部数据。
+- 所有数据均为本地sqlite数据库模拟，无需真实外部数据。
 - 统计时间区间、股票选择均由数据库内数据范围决定。
 - Web端仅需支持单一页面展示，无需多端适配。
 
-1. **Given** [initial state], **When** [action], **Then** [expected outcome]
+## Edge Cases
 
----
+- 查询区间无数据时，页面应提示“无数据”而非报错。
+- 用户输入非法时间区间（如结束早于开始）时，需有友好提示。
+- 股票选择为空时，禁止查询并提示。
+- 数据库文件丢失或损坏时，需有初始化或重建入口。
 
-[Add more user stories as needed, each with an assigned priority]
+## Implementation Notes
 
-### Edge Cases
+- 数据库建议采用sqlite，结构简单，便于本地开发。
+- 后端建议用Flask（或FastAPI）暴露API，接口简单明了。
+- 前端建议用Vue或React，UI可用Antd、Element等常用组件库。
+- 统计展示用echarts或chart.js，动画流畅。
+- 不要求多用户登录、权限、复杂部署。
+- 只需支持单页面查询与展示，界面美观简洁即可。
 
-<!--
-  ACTION REQUIRED: The content in this section represents placeholders.
-  Fill them out with the right edge cases.
--->
-
-- What happens when [boundary condition]?
-- How does system handle [error scenario]?
-
-## Requirements *(mandatory)*
-
-<!--
-  ACTION REQUIRED: The content in this section represents placeholders.
-  Fill them out with the right functional requirements.
--->
-
-### Functional Requirements
-
-- **FR-001**: System MUST [specific capability, e.g., "allow users to create accounts"]
-- **FR-002**: System MUST [specific capability, e.g., "validate email addresses"]  
-- **FR-003**: Users MUST be able to [key interaction, e.g., "reset their password"]
-- **FR-004**: System MUST [data requirement, e.g., "persist user preferences"]
-- **FR-005**: System MUST [behavior, e.g., "log all security events"]
-
-*Example of marking unclear requirements:*
-
-- **FR-006**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
-- **FR-007**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
-
-### Key Entities *(include if feature involves data)*
-
-- **[Entity 1]**: [What it represents, key attributes without implementation]
-- **[Entity 2]**: [What it represents, relationships to other entities]
-
-## Success Criteria *(mandatory)*
-
-<!--
-  ACTION REQUIRED: Define measurable success criteria.
-  These must be technology-agnostic and measurable.
--->
-
-### Measurable Outcomes
-
-- **SC-001**: [Measurable metric, e.g., "Users can complete account creation in under 2 minutes"]
-- **SC-002**: [Measurable metric, e.g., "System handles 1000 concurrent users without degradation"]
-- **SC-003**: [User satisfaction metric, e.g., "90% of users successfully complete primary task on first attempt"]
-- **SC-004**: [Business metric, e.g., "Reduce support tickets related to [X] by 50%"]
