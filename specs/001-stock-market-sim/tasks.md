@@ -11,12 +11,12 @@ description: "Tasks for 股票市场数据统计网站"
 
 **Purpose**: 项目初始化与基础结构
 
-- [ ] T001 创建 backend/ 与 frontend/ 目录结构
-- [ ] T002 使用 mamba/conda 创建 Python 虚拟环境（如：mamba create -n stocksite python=3.11）
-- [ ] T003 在虚拟环境中安装 Flask、pandas、sqlite3（mamba install flask pandas sqlite）
-- [ ] T004 安装 Node.js（如未安装，建议用 nvm 安装 LTS 版本）
-- [ ] T005 初始化前端项目（Vue3 + Vite + ECharts），如需可先安装 yarn（npm i -g yarn）
-- [ ] T006 [P] 配置后端与前端的 lint/format 工具
+- [X] T001 创建 backend/ 与 frontend/ 目录结构
+- [X] T002 使用 mamba/conda 创建 Python 虚拟环境（如：mamba create -n stocksite python=3.11）
+- [X] T003 在虚拟环境中安装 Flask、pandas、sqlite3（mamba install flask pandas sqlite）
+- [X] T004 安装 Node.js（如未安装，建议用 nvm 安装 LTS 版本）
+- [X] T005 初始化前端项目（Vue3 + Vite + ECharts），如需可先安装 yarn（npm i -g yarn）
+- [X] T006 [P] 配置后端与前端的 lint/format 工具
 
 ---
 
@@ -24,10 +24,10 @@ description: "Tasks for 股票市场数据统计网站"
 
 **Purpose**: 所有用户故事前置的基础能力
 
-- [ ] T005 设计并实现 sqlite 数据库结构于 backend/db.py
-- [ ] T006 [P] 实现虚拟数据生成脚本于 backend/db.py
-- [ ] T007 [P] 编写数据库生成与重建的自动化测试于 backend/tests/test_db.py
-- [ ] T008 [P] 实现基础 Flask 启动与健康检查接口于 backend/app.py
+- [X] T005 设计并实现 sqlite 数据库结构于 backend/db.py
+- [X] T006 [P] 实现虚拟数据生成脚本于 backend/db.py
+- [X] T007 [P] 编写数据库生成与重建的自动化测试于 backend/tests/test_db.py
+- [X] T008 [P] 实现基础 Flask 启动与健康检查接口于 backend/app.py
 
 ---
 
@@ -36,9 +36,9 @@ description: "Tasks for 股票市场数据统计网站"
 **Goal**: 一键生成本地虚拟数据库，含一周100用户50股票买卖及价格波动
 **Independent Test Criteria**: 运行生成脚本后，数据库结构与数据量、分布、时间范围均正确
 
-- [ ] T009 [US2] 完善虚拟数据生成逻辑（价格正态波动、用户买卖行为）于 backend/db.py
-- [ ] T010 [P] [US2] 生成初始数据并写入数据库，支持重建
-- [ ] T011 [P] [US2] 自动化测试：数据分布、时间范围、边界情况于 backend/tests/test_db.py
+- [X] T009 [US2] 完善虚拟数据生成逻辑（价格正态波动、用户买卖行为）于 backend/db.py
+- [X] T010 [P] [US2] 生成初始数据并写入数据库，支持重建
+- [X] T011 [P] [US2] 自动化测试：数据分布、时间范围、边界情况于 backend/tests/test_db.py
 
 ---
 
