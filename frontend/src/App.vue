@@ -1,30 +1,40 @@
+
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import { ref } from 'vue'
+import QueryForm from './components/QueryForm.vue'
+import StatsCharts from './components/StatsCharts.vue'
+import { queryStats } from './api/index.js'
+
+const stats = ref(null)
+const loading = ref(false)
+const error = ref('')
+
+function handleQuery(params) {
+  stats.value = null
+  error.value = ''
+  loading.value = true
+  queryStats(params)
+    .then(res => {
+      stats.value = res.data
+      if (!res.data.prices.length) error.value = '无数据'
+    })
+    .catch(e => {
+      error.value = e.response?.data?.error || '查询失败'
+    })
+    .finally(() => loading.value = false)
+}
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div style="max-width:700px;margin:40px auto;padding:24px;background:#fff;border-radius:8px;box-shadow:0 2px 8px #eee;">
+    <h2 style="margin-bottom:24px;">股票统计查询</h2>
+    <QueryForm @query="handleQuery" />
+    <StatsCharts :stats="stats" :loading="loading" :error="error" style="margin-top:32px;" />
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+body {
+  background: #f5f6fa;
 }
 </style>

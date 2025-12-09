@@ -13,7 +13,7 @@ DAYS = 7
 TRADES_PER_USER_PER_DAY = (1, 5)
 PRICE_RANGE = (20, 200)
 TIME_STEP_MIN = 5
-STOCK_NAMES = [f'Stock{i+1}' for i in range(STOCK_NUM)]
+STOCK_NAMES = [f'Stock{i+1:02d} (No.{i+1})' for i in range(STOCK_NUM)]
 
 def get_db_path():
     return DB_PATH

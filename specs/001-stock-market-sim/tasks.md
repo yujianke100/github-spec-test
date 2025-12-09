@@ -47,12 +47,12 @@ description: "Tasks for 股票市场数据统计网站"
 **Goal**: 支持按时间区间、股票查询统计，返回价格曲线、买卖量、盈亏
 **Independent Test Criteria**: Web端输入后，能正确展示所有统计信息
 
-- [ ] T012 [US1] 设计并实现 /api/stocks 与 /api/query 接口于 backend/api.py
-- [ ] T013 [P] [US1] 编写接口自动化测试于 backend/tests/test_api.py
-- [ ] T014 [US1] 前端实现股票、时间区间选择与查询表单于 frontend/src/components/QueryForm.vue
-- [ ] T015 [P] [US1] 前端实现价格曲线、买卖量、盈亏展示组件于 frontend/src/components/StatsCharts.vue
-- [ ] T016 [P] [US1] 前后端联调，确保查询与展示流程丝滑
-- [ ] T017 [P] [US1] 前端边界与异常提示（无数据、参数非法等）于 frontend/src/components/QueryForm.vue
+- [X] T012 [US1] 设计并实现 /api/stocks 与 /api/query 接口于 backend/api.py
+- [X] T013 [P] [US1] 编写接口自动化测试于 backend/tests/test_api.py
+- [X] T014 [US1] 前端实现股票、时间区间选择与查询表单于 frontend/src/components/QueryForm.vue
+- [X] T015 [P] [US1] 前端实现价格曲线、买卖量、盈亏展示组件于 frontend/src/components/StatsCharts.vue
+- [X] T016 [P] [US1] 前后端联调，确保查询与展示流程丝滑
+- [X] T017 [P] [US1] 前端边界与异常提示（无数据、参数非法等）于 frontend/src/components/QueryForm.vue
 
 ---
 
